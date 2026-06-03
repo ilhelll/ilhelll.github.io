@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Замена паспорта в 20 и 45 лет | Пошаговая инструкция МФЦ</title>
+    <style>
+        /* ===== RESET & GLOBAL ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .mfc-page,
+        .mfc-page * {
+            box-sizing: border-box;
+        }
+
+        .mfc-page {
+            --mfc-blue: #005BAA;
+            --mfc-blue-dark: #004080;
+            --mfc-blue-light: #e8f1fb;
+            --mfc-gray-bg: #f9f9f9;
+            --mfc-gray-border: #e0e0e0;
+            --mfc-text: #333333;
+            --mfc-text-light: #666666;
+            --mfc-red: #d32f2f;
+            --mfc-red-bg: #fdecea;
+            --mfc-green: #2e7d32;
+            --mfc-green-bg: #e8f5e9;
+            --mfc-white: #ffffff;
+            --mfc-black-light: #1e2a3a;
+            
+            font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+            color: var(--mfc-text);
+            background: var(--mfc-white);
+            line-height: 1.6;
+            max-width: 100%;
+        }
+
+        /* ===== ЛОГОТИП (реальный img) ===== */
+        .mfc-page__logo {
+            padding: 40px 20px 0;
+            text-align: center;
+        }
+        .mfc-page__logo-img {
+            max-width: 220px;
+            height: auto;
+            display: inline-block;
+            border-radius: 12px;
+            transition: transform 0.2s ease;
+        }
+        .mfc-page__logo-img:hover {
+            transform: scale(1.02);
+        }
+
+        /* ===== HERO ===== */
+        .mfc-page__hero {
+            text-align: center;
+            padding: 32px 20px 40px;
+        }
+        .mfc-page__title {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 1.2;
+            color: var(--mfc-blue);
+            margin: 0 0 16px;
+        }
+        .mfc-page__subtitle {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 18px;
+            color: var(--mfc-text-light);
+            margin: 0;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== ВИДЕО (video.mp3 в HTML5 video) ===== */
+        .mfc-page__video-wrapper {
+            max-width: 1000px;
+            margin: 0 auto 0;
+            padding: 0 20px 48px;
+        }
+        .mfc-page__video-container {
+            background: #0a0f1c;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+            transition: all 0.25s;
+        }
+        .mfc-page__video-element {
+            width: 100%;
+            display: block;
+            background: #000;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+        .mfc-page__video-caption {
+            background: #f2f4f8;
+            padding: 12px 16px;
+            font-size: 14px;
+            color: var(--mfc-text-light);
+            text-align: center;
+            border-top: 1px solid var(--mfc-gray-border);
+            font-family: 'Open Sans', monospace;
+        }
+        .mfc-page__video-caption a {
+            color: var(--mfc-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* ===== SECTION ===== */
+        .mfc-page__section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 48px;
+        }
+        .mfc-page__section-title {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 28px;
+            color: var(--mfc-blue);
+            margin: 0 0 32px;
+            text-align: center;
+        }
+
+        /* ===== ШАГИ ===== */
+        .mfc-page__steps-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .mfc-page__step {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--mfc-gray-border);
+        }
+        .mfc-page__step:last-child {
+            border-bottom: none;
+        }
+        .mfc-page__step-num {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--mfc-blue);
+            color: var(--mfc-white);
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+        .mfc-page__step-body {
+            flex: 1;
+            min-width: 0;
+        }
+        .mfc-page__step-title {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--mfc-text);
+            margin: 0 0 8px;
+        }
+        .mfc-page__step-text {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 15px;
+            color: var(--mfc-text-light);
+            margin: 0;
+            line-height: 1.65;
+        }
+        .mfc-page__step-text strong {
+            color: var(--mfc-text);
+        }
+
+        /* ===== ТАБЛИЦА ===== */
+        .mfc-page__table-wrap {
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid var(--mfc-gray-border);
+        }
+        .mfc-page__table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        .mfc-page__table th {
+            background: var(--mfc-blue);
+            color: var(--mfc-white);
+            font-weight: 600;
+            padding: 14px 16px;
+            text-align: left;
+            white-space: nowrap;
+        }
+        .mfc-page__table td {
+            padding: 12px 16px;
+            border-top: 1px solid var(--mfc-gray-border);
+        }
+        .mfc-page__table tbody tr:nth-child(odd) {
+            background: var(--mfc-gray-bg);
+        }
+        .mfc-page__table tbody tr:nth-child(even) {
+            background: var(--mfc-white);
+        }
+        .mfc-page__table td:first-child {
+            font-weight: 700;
+            color: var(--mfc-blue);
+            text-align: center;
+            width: 50px;
+        }
+
+        /* ===== СРАВНЕНИЕ ОШИБКИ / ПРАВИЛЬНЫЕ ДЕЙСТВИЯ ===== */
+        .mfc-page__compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .mfc-page__compare-heading {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .mfc-page__compare-heading--wrong {
+            color: var(--mfc-red);
+        }
+        .mfc-page__compare-heading--right {
+            color: var(--mfc-green);
+        }
+        .mfc-page__compare-col--wrong {
+            background: var(--mfc-red-bg);
+            border-radius: 12px;
+            padding: 28px;
+            border-left: 4px solid var(--mfc-red);
+        }
+        .mfc-page__compare-col--right {
+            background: var(--mfc-green-bg);
+            border-radius: 12px;
+            padding: 28px;
+            border-left: 4px solid var(--mfc-green);
+        }
+        .mfc-page__icon-x {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--mfc-red);
+            color: var(--mfc-white);
+            font-size: 16px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .mfc-page__icon-ok {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--mfc-green);
+            color: var(--mfc-white);
+            font-size: 18px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .mfc-page__compare-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .mfc-page__compare-list li {
+            position: relative;
+            padding: 10px 0 10px 28px;
+            font-size: 15px;
+            line-height: 1.55;
+            border-bottom: 1px solid rgba(0,0,0,.06);
+            font-family: 'Open Sans', Arial, sans-serif;
+        }
+        .mfc-page__compare-list li:last-child {
+            border-bottom: none;
+        }
+        .mfc-page__compare-list--wrong li::before {
+            content: '✕';
+            position: absolute;
+            left: 0; top: 10px;
+            color: var(--mfc-red);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .mfc-page__compare-list--right li::before {
+            content: '✓';
+            position: absolute;
+            left: 0; top: 10px;
+            color: var(--mfc-green);
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        /* ===== КНОПКА СКАЧАТЬ PDF ===== */
+        .mfc-page__download {
+            text-align: center;
+            padding-bottom: 40px;
+        }
+        .mfc-page__download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--mfc-blue);
+            color: var(--mfc-white);
+            text-decoration: none;
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            padding: 16px 36px;
+            border-radius: 12px;
+            transition: background .25s ease, transform .15s ease;
+            cursor: pointer;
+            border: none;
+        }
+        .mfc-page__download-btn:hover {
+            background: var(--mfc-blue-dark);
+            transform: translateY(-1px);
+        }
+        .mfc-page__download-icon svg {
+            display: block;
+        }
+
+        /* ===== QR КОД (плейсхолдер) ===== */
+        .mfc-page__qr {
+            text-align: center;
+            padding-bottom: 48px;
+        }
+        .mfc-page__qr-box {
+            display: inline-block;
+        }
+        .mfc-page__qr-placeholder {
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+        .mfc-page__qr-fake {
+            width: 160px;
+            height: 160px;
+            border: 2px dashed var(--mfc-gray-border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--mfc-text-light);
+            font-family: 'Open Sans', Arial, sans-serif;
+            background: #fef9e6;
+        }
+        .mfc-page__qr-caption {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 14px;
+            color: var(--mfc-text-light);
+            margin: 0;
+        }
+
+        /* ===== ФУТЕР ===== */
+        .mfc-page__footer {
+            background: var(--mfc-blue);
+            color: var(--mfc-white);
+            padding: 36px 20px;
+        }
+        .mfc-page__footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .mfc-page__footer-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 28px 48px;
+            margin-bottom: 20px;
+        }
+        .mfc-page__footer-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--mfc-white);
+            text-decoration: none;
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 15px;
+            transition: opacity .2s ease;
+        }
+        .mfc-page__footer-link:hover {
+            opacity: .85;
+        }
+        .mfc-page__footer-icon {
+            display: inline-flex;
+            opacity: .8;
+        }
+        .mfc-page__footer-free {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 14px;
+            opacity: .75;
+            border-top: 1px solid rgba(255,255,255,.2);
+            padding-top: 18px;
+        }
+
+        /* ===== АДАПТИВ ===== */
+        @media (max-width: 960px) {
+            .mfc-page__title { font-size: 30px; }
+            .mfc-page__subtitle { font-size: 16px; }
+            .mfc-page__compare-grid { gap: 24px; }
+        }
+        @media (max-width: 640px) {
+            .mfc-page__title { font-size: 26px; }
+            .mfc-page__section-title { font-size: 24px; }
+            .mfc-page__compare-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .mfc-page__step { gap: 16px; }
+            .mfc-page__step-num { width: 40px; height: 40px; font-size: 17px; }
+            .mfc-page__step-title { font-size: 17px; }
+            .mfc-page__footer-row { gap: 16px 28px; }
+            .mfc-page__download-btn { padding: 14px 28px; font-size: 15px; }
+            .mfc-page__table { font-size: 13px; }
+            .mfc-page__table th, .mfc-page__table td { padding: 10px 10px; }
+        }
+        @media (max-width: 480px) {
+            .mfc-page__logo { padding-top: 24px; }
+            .mfc-page__hero { padding: 24px 16px 32px; }
+            .mfc-page__title { font-size: 22px; }
+            .mfc-page__subtitle { font-size: 14px; }
+            .mfc-page__section { padding: 0 16px 36px; }
+            .mfc-page__section-title { font-size: 21px; margin-bottom: 24px; }
+            .mfc-page__step { flex-direction: column; gap: 12px; }
+            .mfc-page__compare-col--wrong,
+            .mfc-page__compare-col--right { padding: 20px; }
+            .mfc-page__download-btn { width: 100%; justify-content: center; }
+            .mfc-page__qr-fake { width: 130px; height: 130px; }
+            .mfc-page__footer-row { flex-direction: column; gap: 14px; }
+        }
+    </style>
+</head>
+<body>
+<div class="mfc-page">
+
+    <!-- ===== 1. LOGO (реальное изображение logo.jpg) ===== -->
+    <div class="mfc-page__logo">
+        <img class="mfc-page__logo-img" src="logo.jpg" alt="Логотип МФЦ / сервис" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%2280%22%20viewBox%3D%220%200%20200%2080%22%3E%3Crect%20width%3D%22200%22%20height%3D%2280%22%20fill%3D%22%23f0f4fa%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-size%3D%2214%22%20fill%3D%22%23666%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%3E%D0%9B%D0%9E%D0%93%D0%9E%3C%2Ftext%3E%3C%2Fsvg%3E';">
+    </div>
+
+    <!-- ===== 2–3. HERO ===== -->
+    <div class="mfc-page__hero">
+        <h1 class="mfc-page__title">Замена паспорта в 20 и 45 лет</h1>
+        <p class="mfc-page__subtitle">Пошаговая инструкция, чтобы всё прошло быстро и без ошибок</p>
+    </div>
+
+    <!-- ===== 4. ВИДЕО (video.mp3) ===== -->
+    <div class="mfc-page__video-wrapper">
+        <div class="mfc-page__video-container">
+            <video class="mfc-page__video-element" controls poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%231e2a3a'/%3E%3Ctext x='400' y='220' fill='%23ffffff' font-size='22' text-anchor='middle' font-family='Arial'%3E📹%20%D0%92%D0%B8%D0%B4%D0%B5%D0%BE-%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D1%8F%3C%2Ftext%3E%3Ctext x='400' y='260' fill='%23aaccff' font-size='16' text-anchor='middle'%3E%D0%9D%D0%B0%D0%B6%D0%BC%D0%B8%D1%82%D0%B5%20Play%3C%2Ftext%3E%3C%2Fsvg%3E">
+                <source src="video.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео. Вы можете скачать инструкцию в PDF.
+            </video>
+            <div class="mfc-page__video-caption">
+                🎬 Видеоинструкция: замена паспорта в 20 и 45 лет (аудио + визуальные пояснения)
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 5. ПОШАГОВАЯ ИНСТРУКЦИЯ ===== -->
+    <div class="mfc-page__section mfc-page__steps">
+        <h2 class="mfc-page__section-title">Пошаговая инструкция</h2>
+        <div class="mfc-page__steps-list">
+            <div class="mfc-page__step">
+                <div class="mfc-page__step-num">1</div>
+                <div class="mfc-page__step-body">
+                    <h3 class="mfc-page__step-title">Проверьте даты</h3>
+                    <p class="mfc-page__step-text">Подайте заявление <strong>не позднее 30 дней</strong> после наступления 20 или 45 лет. За каждый день просрочки — штраф 2 000–3 000 ₽.</p>
+                </div>
+            </div>
+            <div class="mfc-page__step">
+                <div class="mfc-page__step-num">2</div>
+                <div class="mfc-page__step-body">
+                    <h3 class="mfc-page__step-title">Соберите документы</h3>
+                    <p class="mfc-page__step-text">Паспорт РФ (старый), две фотографии 35×45 мм, военный билет (для мужчин), свидетельства о рождении детей до 14 лет, квитанция об уплате пошлины.</p>
+                </div>
+            </div>
+            <div class="mfc-page__step">
+                <div class="mfc-page__step-num">3</div>
+                <div class="mfc-page__step-body">
+                    <h3 class="mfc-page__step-title">Оплатите госпошлину</h3>
+                    <p class="mfc-page__step-text">Стоимость — <strong>300 ₽</strong> (при подаче через Госуслуги — <strong>210 ₽</strong> со скидкой 30 %). Реквизиты уточните на сайте вашего МФЦ.</p>
+                </div>
+            </div>
+            <div class="mfc-page__step">
+                <div class="mfc-page__step-num">4</div>
+                <div class="mfc-page__step-body">
+                    <h3 class="mfc-page__step-title">Запишитесь или приходите</h3>
+                    <p class="mfc-page__step-text">Можно подать документы через портал <strong>Госуслуги</strong> или лично посетить ближайшее отделение МФЦ. При визите возьмите оригиналы всех документов.</p>
+                </div>
+            </div>
+            <div class="mfc-page__step">
+                <div class="mfc-page__step-num">5</div>
+                <div class="mfc-page__step-body">
+                    <h3 class="mfc-page__step-title">Получите новый паспорт</h3>
+                    <p class="mfc-page__step-text">Срок изготовления — <strong>10 рабочих дней</strong> (в вашем регионе) или <strong>30 рабочих дней</strong> (в другом регионе). МФЦ уведомит вас по СМС.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 6. ТАБЛИЦА НЕОБХОДИМЫХ ДОКУМЕНТОВ ===== -->
+    <div class="mfc-page__section mfc-page__table-section">
+        <h2 class="mfc-page__section-title">Необходимые документы</h2>
+        <div class="mfc-page__table-wrap">
+            <table class="mfc-page__table">
+                <thead>
+                    <tr><th>№</th><th>Документ</th><th>Количество</th><th>Примечание</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Паспорт РФ (старый)</td><td>1 шт.</td><td>Обязательно — сдаётся вместе с заявлением</td></tr>
+                    <tr><td>2</td><td>Фотографии 35 × 45 мм</td><td>2 шт.</td><td>Матовые, на белом фоне, без головного убора</td></tr>
+                    <tr><td>3</td><td>Квитанция об уплате госпошлины</td><td>1 шт.</td><td>300 ₽ или 210 ₽ (через Госуслуги)</td></tr>
+                    <tr><td>4</td><td>Военный билет</td><td>1 шт.</td><td>Для мужчин от 18 до 27 лет (если выдан)</td></tr>
+                    <tr><td>5</td><td>Свидетельства о рождении детей</td><td>до 14 лет</td><td>Для проставления отметок о детях до 14 лет</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ===== 7. ОШИБКИ VS ПРАВИЛЬНЫЕ ДЕЙСТВИЯ ===== -->
+    <div class="mfc-page__section mfc-page__compare">
+        <h2 class="mfc-page__section-title">Частые ошибки и правильные действия</h2>
+        <div class="mfc-page__compare-grid">
+            <div class="mfc-page__compare-col mfc-page__compare-col--wrong">
+                <h3 class="mfc-page__compare-heading mfc-page__compare-heading--wrong">
+                    <span class="mfc-page__icon-x">✕</span> Частые ошибки
+                </h3>
+                <ul class="mfc-page__compare-list mfc-page__compare-list--wrong">
+                    <li>Подача заявления позже 30 дней после дня рождения</li>
+                    <li>Фотографии с тёмным фоном или в формате «сэлфи»</li>
+                    <li>Отсутствие квитанции об оплате пошлины</li>
+                    <li>Неполный пакет документов (забыли военный билет)</li>
+                    <li>Заполнение заявления на МФЦ вместо портала Госуслуг</li>
+                </ul>
+            </div>
+            <div class="mfc-page__compare-col mfc-page__compare-col--right">
+                <h3 class="mfc-page__compare-heading mfc-page__compare-heading--right">
+                    <span class="mfc-page__icon-ok">✓</span> Правильные действия
+                </h3>
+                <ul class="mfc-page__compare-list mfc-page__compare-list--right">
+                    <li>Подайте заявление в течение 30 дней после дня рождения</li>
+                    <li>Фотографируйтесь в фотоателье — матовые, 35×45 мм</li>
+                    <li>Оплатите госпошлину заранее и сохраните квитанцию</li>
+                    <li>Соберите полный список документов по таблице выше</li>
+                    <li>Используйте портал Госуслуг для записи и подачи онлайн</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 8. СКАЧАТЬ PDF ===== -->
+    <div class="mfc-page__section mfc-page__download">
+        <button class="mfc-page__download-btn" id="downloadPdfBtn">
+            <span class="mfc-page__download-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </span>
+            <span class="mfc-page__download-text">Скачать PDF-версию инструкции</span>
+        </button>
+    </div>
+
+    <!-- ===== 9. QR КОД ===== -->
+    <div class="mfc-page__section mfc-page__qr">
+        <div class="mfc-page__qr-box">
+            <div class="mfc-page__qr-placeholder">
+                <div class="mfc-page__qr-fake">📱 QR-код</div>
+            </div>
+            <p class="mfc-page__qr-caption">Наведите камеру, чтобы открыть инструкцию на телефоне</p>
+        </div>
+    </div>
+
+    <!-- ===== 10. ФУТЕР ===== -->
+    <footer class="mfc-page__footer">
+        <div class="mfc-page__footer-inner">
+            <div class="mfc-page__footer-row">
+                <a href="tel:+78001234567" class="mfc-page__footer-link">
+                    <span class="mfc-page__footer-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+                    <span class="mfc-page__footer-text">8 (800) 123-45-67</span>
+                </a>
+                <a href="#" class="mfc-page__footer-link">
+                    <span class="mfc-page__footer-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></span>
+                    <span class="mfc-page__footer-text">www.mfc-passport.ru</span>
+                </a>
+                <a href="mailto:info@mfc-passport.ru" class="mfc-page__footer-link">
+                    <span class="mfc-page__footer-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg></span>
+                    <span class="mfc-page__footer-text">info@mfc-passport.ru</span>
+                </a>
+            </div>
+            <div class="mfc-page__footer-free">⚠ Вся информация бесплатна</div>
+        </div>
+    </footer>
+</div>
+
+<script>
+    // Функция для скачивания PDF (имитация генерации или просто ссылка)
+    // Сохраняет актуальную страницу как PDF через window.print с кастомизацией.
+    // Для реального экспорта используем print стили.
+    const downloadBtn = document.getElementById('downloadPdfBtn');
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', (e) => {
+            // Создаем временный элемент для генерации PDF через print с настройками
+            const originalTitle = document.title;
+            document.title = "Instrukciya_zamena_pasporta_20_45_let";
+            window.print();
+            document.title = originalTitle;
+        });
+    }
+
+    // Добавляем медиа-печать для чистого экспорта PDF (скрывает лишнее)
+    const stylePrint = document.createElement('style');
+    stylePrint.textContent = `@media print {
+        .mfc-page__download-btn,
+        .mfc-page__qr,
+        .mfc-page__footer .mfc-page__footer-link,
+        .mfc-page__video-caption a,
+        .mfc-page__logo-img,
+        .mfc-page__video-wrapper {
+            break-inside: avoid;
+        }
+        .mfc-page__download {
+            display: none;
+        }
+        body {
+            padding: 0;
+            margin: 0;
+            background: white;
+        }
+        .mfc-page__step {
+            break-inside: avoid;
+        }
+        .mfc-page__compare-grid {
+            break-inside: avoid;
+        }
+        .mfc-page__footer {
+            background: #005BAA;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .mfc-page__table th {
+            background: #005BAA !important;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .mfc-page__compare-col--wrong, .mfc-page__compare-col--right {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+    }`;
+    document.head.appendChild(stylePrint);
+    
+    // Дополнительно уведомление о том, что видеофайл использует video.mp3
+    // Если видео не загружается – показываем fallback в консоли, но на странице уже отображается плеер.
+    const videoEl = document.querySelector('.mfc-page__video-element');
+    if (videoEl) {
+        videoEl.addEventListener('error', () => {
+            console.warn('Видеофайл video.mp3 не найден или формат не поддерживается. Пожалуйста, проверьте путь к файлу.');
+            const caption = document.querySelector('.mfc-page__video-caption');
+            if (caption) {
+                const warnSpan = document.createElement('span');
+                warnSpan.style.color = '#d9534f';
+                warnSpan.style.display = 'block';
+                warnSpan.style.fontSize = '12px';
+                warnSpan.innerHTML = '⚠ Видео не загружено. Убедитесь, что файл "video.mp3" доступен.';
+                caption.appendChild(warnSpan);
+            }
+        });
+    }
+    
+    // Обработчик ошибки логотипа (уже встроен onerror, но дополнительно)
+    const logoImg = document.querySelector('.mfc-page__logo-img');
+    if (logoImg && logoImg.complete && logoImg.naturalWidth === 0) {
+        logoImg.src = 'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%2280%22%20viewBox%3D%220%200%20200%2080%22%3E%3Crect%20width%3D%22200%22%20height%3D%2280%22%20fill%3D%22%23f0f4fa%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-size%3D%2214%22%20fill%3D%22%23666%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%3E%D0%9B%D0%9E%D0%93%D0%9E%3C%2Ftext%3E%3C%2Fsvg%3E';
+    }
+</script>
+</body>
+</html>
